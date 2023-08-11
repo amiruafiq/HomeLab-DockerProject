@@ -72,6 +72,12 @@ services:
 ![alt text](img\3.JPG)
 
 
+
+This command starts the containers in the background and allows you to continue using the terminal without interrupting Docker Compose.
+```
+docker-compose up -d
+```
+
 Bring up the docker stacks
 ```
 docker-compose up -d
