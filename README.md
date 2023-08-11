@@ -95,4 +95,6 @@ Result running NGINX in docker compose (example of website)
 
 
 ### 1) Register No-IP DDNS
+![alt text](img/5.jpg)
 ### 2) Enable port fowarding from router
+![alt text](img/6.jpg)
