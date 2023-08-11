@@ -9,7 +9,7 @@ Please download [Raspberry Pi OS (64-bit)](https://www.raspberrypi.com/software/
 
 Use imager from raspberry pi, click advance setting to enable ssh and using port 22.
 Also please set appropriate hostname
-![alt text]img\1.jpg)
+![alt text](img\1.jpg)
 
 ## 2) ssh into raspberry pi
 ## 3) Install docker
@@ -42,3 +42,37 @@ docker --version
 ```
 
 If Docker is installed correctly, it will display the installed version.
+
+## Install Portainer (To undersand more how docker vs docker-compose works)
+## 1) xxx
+## 2) xxx
+## 3) xxx
+## 4) xxx
+## 5) xxx
+Docker Stacks @ Docker compose
+
+Create file docker ``` vim docker-compose.yml ```
+
+```
+version: '3'
+services:
+  website:
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./website:/usr/share/nginx/html
+    container_name: docker-stacks_Website_Surau
+    restart: always
+
+```
+
+![alt text](img\2.JPG)
+
+![alt text](img\3.JPG)
+
+
+Bring up the docker stacks
+```
+docker-compose up -d
+```
