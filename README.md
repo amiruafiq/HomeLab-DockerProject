@@ -92,3 +92,7 @@ docker exec -it ed02ab0840bb bash
 
 Result running NGINX in docker compose (example of website)
 ![alt text](img/4.png)
+
+
+### Register No-IP DDNS
+### Enable port fowarding from router
