@@ -82,3 +82,13 @@ Bring up the docker stacks
 ```
 docker-compose up -d
 ```
+
+To transfer file from RP4 to docker (ed02ab0840bb)
+```
+docker cp /home/pi/html-files/. ed02ab0840bb:/usr/share/nginx/html/
+```
+
+To enter docker
+```
+docker exec -it ed02ab0840bb bash
+```
