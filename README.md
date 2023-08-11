@@ -9,7 +9,7 @@ Please download [Raspberry Pi OS (64-bit)](https://www.raspberrypi.com/software/
 
 Use imager from raspberry pi, click advance setting to enable ssh and using port 22.
 Also please set appropriate hostname
-![alt text](img\1.jpg)
+![alt text](img/1.jpg)
 
 ## 2) ssh into raspberry pi
 ## 3) Install docker
@@ -67,7 +67,7 @@ services:
 
 ```
 
-![alt text](img\2.JPG)
+![alt text](img/2.JPG)
 
 ![alt text](img/3.JPG)
 
@@ -92,3 +92,6 @@ To enter docker
 ```
 docker exec -it ed02ab0840bb bash
 ```
+
+Result running NGINX in docker compose (example of website)
+![alt text](img/4.JPG)
