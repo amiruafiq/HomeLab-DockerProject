@@ -74,9 +74,6 @@ services:
 
 
 This command starts the containers in the background and allows you to continue using the terminal without interrupting Docker Compose.
-```
-docker-compose up -d
-```
 
 Bring up the docker stacks
 ```
@@ -94,4 +91,4 @@ docker exec -it ed02ab0840bb bash
 ```
 
 Result running NGINX in docker compose (example of website)
-![alt text](img/4.JPG)
+![alt text](img/4.png)
