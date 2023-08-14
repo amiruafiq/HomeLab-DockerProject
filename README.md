@@ -121,3 +121,8 @@ sudo ufw enable
 ```
 sudo ufw allow 9001
 ```
+
+#### 5) Check port open
+```
+sudo ufw status numbered
+```
