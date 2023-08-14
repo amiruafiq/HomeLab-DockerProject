@@ -61,12 +61,12 @@ sudo docker pull portainer/portainer-ce:linux-arm
 ```
 sudo docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock --name portainer portainer/portainer-ce:linux-arm
 ```
-## 3) To confirm portainer are running
+### 3) To confirm portainer are running
 ```
 sudo docker ps
 ```
 
-Docker Stacks @ Docker compose
+## Docker Stacks @ Docker compose
 
 Install ```docker-compose```
 download the Docker Compose binary:
