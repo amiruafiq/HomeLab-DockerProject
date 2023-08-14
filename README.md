@@ -50,12 +50,22 @@ If Docker is installed correctly, it will display the installed version.
 sudo usermod -aG docker $USER
 ```
 
+
+
 ## Install Portainer (To undersand more how docker vs docker-compose works)
-## 1) xxx
-## 2) xxx
-## 3) xxx
-## 4) xxx
-## 5) xxx
+### 1) Pull the Portainer image from Docker Hub by running the following command:
+```
+sudo docker pull portainer/portainer-ce:linux-arm
+```
+### 2) Once the image is downloaded, create a Docker container with the following command:
+```
+sudo docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock --name portainer portainer/portainer-ce:linux-arm
+```
+## 3) To confirm portainer are running
+```
+sudo docker ps
+```
+
 Docker Stacks @ Docker compose
 
 Create file docker ``` vim docker-compose.yml ```
