@@ -17,7 +17,7 @@ Also please set appropriate hostname
 ```sudo apt update
 sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 ```
-```
+
 ### b) Add the Docker GPG key to ensure the authenticity of the Docker packages
 ```
 curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
