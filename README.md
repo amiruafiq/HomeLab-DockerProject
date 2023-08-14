@@ -98,3 +98,26 @@ Result running NGINX in docker compose (example of website)
 ![alt text](img/5.png)
 ### 2) Enable port fowarding from router
 ![alt text](img/6.png)
+
+
+## Open port *If needed
+
+#### 1) Update repo
+```
+sudo apt update
+```
+
+#### 2) Download firewall
+```
+sudo apt install ufw
+```
+
+#### 3) Enable firewall on startrp
+```
+sudo ufw enable
+```
+
+#### 4) Open selected port
+```
+sudo ufw allow 9001
+```
