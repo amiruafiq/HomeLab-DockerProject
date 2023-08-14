@@ -13,13 +13,15 @@ Also please set appropriate hostname
 
 ## 2) ssh into raspberry pi
 ## 3) Install docker
-### a) Update the package index and install the necessary dependencies:
+### a) Install the necessary packages to allow apt to use a repository over HTTPS:
 ```sudo apt update
-sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+```
 ```
 ### b) Add the Docker GPG key to ensure the authenticity of the Docker packages
 ```
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
 ```
 
 ### c) Add the Docker repository to the system's package sources:
@@ -42,6 +44,11 @@ docker --version
 ```
 
 If Docker is installed correctly, it will display the installed version.
+
+### g) Additional
+```
+sudo usermod -aG docker $USER
+```
 
 ## Install Portainer (To undersand more how docker vs docker-compose works)
 ## 1) xxx
