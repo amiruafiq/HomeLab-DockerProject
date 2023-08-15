@@ -1,58 +1,64 @@
-# homelab-DockerProject
-*Docker running on raspberry pi 4
+# HomeLab-DockerProject
+**Docker running on raspberry pi 4**
 
 Disclaimer: This project started on August 2023, some package might different 
 
-## 1) Install linux on Raspberry pi 4
-Please download Raspberry Pi OS (64-bit) since it have 8GB of RAM
+### 1) Install linux on Raspberry pi 4
+
 Please download [Raspberry Pi OS (64-bit)](https://www.raspberrypi.com/software/operating-systems/) since it have 8GB of RAM
+
 
 Use imager from raspberry pi, click advance setting to enable ssh and using port 22.
 Also please set appropriate hostname
 ![alt text](img/1.jpg)
 
-## 2) ssh into raspberry pi
-## 3) Install docker
-### a) Install the necessary packages to allow apt to use a repository over HTTPS:
+### 2) ssh into raspberry pi
+### 3) Install docker
+#### a) Install the necessary packages to allow apt to use a repository over HTTPS:
 ```sudo apt update
 sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 ```
 
-### b) Add the Docker GPG key to ensure the authenticity of the Docker packages
+#### b) Add the Docker GPG key to ensure the authenticity of the Docker packages
 ```
 curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 ```
 
-### c) Add the Docker repository to the system's package sources:
+#### c) Add the Docker repository to the system's package sources:
 ```
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-### d) Update the package index again to include the Docker packages from the newly added repository:
-```sudo apt update
+#### d) Update the package index again to include the Docker packages from the newly added repository:
+```
+sudo apt update
 ```
 
-### e) Install docker
+#### e) Install docker
 ```
 sudo apt install docker-ce docker-ce-cli containerd.io
 ```
 
-### f) Docker should now be installed on your Debian system. You can verify it by checking the Docker version:
+#### f) Docker should now be installed on your Debian system. You can verify it by checking the Docker version:
 ```
 docker --version
 ```
 
 If Docker is installed correctly, it will display the installed version.
 
-### g) Additional
+#### g) Additional
 ```
 sudo usermod -aG docker $USER
 ```
 
 
 
-## Install Portainer (To undersand more how docker vs docker-compose works)
+## Install 'Portainer' (To undersand more how docker vs docker-compose works)
+
+![alt text](img/7.jpg)
+*example of end result*
+
 ### 1) Pull the Portainer image from Docker Hub by running the following command:
 ```
 sudo docker pull portainer/portainer-ce:linux-arm
@@ -68,7 +74,7 @@ sudo docker ps
 
 ## Docker Stacks @ Docker compose
 
-Install ```docker-compose```
+Install `docker-compose`
 download the Docker Compose binary:
 ```
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -82,7 +88,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 pi@pi-nas:~/DockerCompose $ docker-compose --version
 Docker Compose version v2.20.3
 ```
-Create file docker ``` vim docker-compose.yml ```
+
+Create file docker [(`docker-compose.yml`)](/docker-compose.ymldocker-compose.yml)
 
 ```
 version: '3'
@@ -110,8 +117,9 @@ Bring up the docker stacks
 ```
 docker-compose up -d
 ```
+![alt text](img/8.jpg)
 
-To transfer file from RP4 to docker (ed02ab0840bb)
+To transfer file from RP4 to docker (*ed02ab0840bb*)
 ```
 docker cp /home/pi/html-files/. ed02ab0840bb:/usr/share/nginx/html/
 ```
@@ -125,6 +133,8 @@ Result running NGINX in docker compose (example of website)
 ![alt text](img/4.png)
 
 
+
+## Additional task if need website to publicly access
 ### 1) Register No-IP DDNS
 ![alt text](img/5.png)
 ### 2) Enable port fowarding from router
